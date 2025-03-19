@@ -9,10 +9,12 @@ class Config(object):
 
     """配置参数"""
     def __init__(self, dataset, embedding):
-        self.model_name = 'TextCNN'
-        self.train_path = dataset + '/data/train.txt'                                # 训练集
-        self.dev_path = dataset + '/data/dev.txt'                                    # 验证集
-        self.test_path = dataset + '/data/test.txt'                                  # 测试集
+
+        # 初始化函数，用于设置模型的基本参数和路径
+        self.model_name = 'TextCNN'  # 模型名称
+        self.train_path = dataset + '/data/train.txt'                                # 训练集文件路径
+        self.dev_path = dataset + '/data/dev.txt'                                    # 验证集文件路径
+        self.test_path = dataset + '/data/test.txt'                                  # 测试集文件路径
         self.class_list = [x.strip() for x in open(
             dataset + '/data/class.txt', encoding='utf-8').readlines()]              # 类别名单
         self.vocab_path = dataset + '/data/vocab.pkl'                                # 词表
